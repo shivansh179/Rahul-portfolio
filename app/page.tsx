@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, Variants } from 'framer-motion'
 import { Mail, ExternalLink, Phone, MapPin, Download, Menu } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -39,11 +39,16 @@ export default function Portfolio() {
     }
   }, [])
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 },
+ 
+  const fadeInUp: Variants = {
+  initial: { opacity: 0, y: 60 },
+  animate: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6 } // Move transition inside animate
   }
+}
+
 
   const projects: Project[] = [
     {
